@@ -1562,8 +1562,8 @@ function signInWithGoogle() {
       // onAuthStateChanged will handle the rest
     })
     .catch(err => {
-      console.error('Sign-in error:', err);
-      showLoginError('Failed to sign in. Please try again.');
+      console.error('Sign-in error:', err.code, err.message);
+      showLoginError('Error: ' + err.code + ' — ' + err.message);
       btn.disabled = false;
       loading.classList.remove('show');
     });
