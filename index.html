@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Solo — Notes</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><ellipse cx='16' cy='16' rx='14' ry='9' fill='none' stroke='%231e66f5' stroke-width='1.5'/><circle cx='10' cy='15' r='3.5' fill='none' stroke='%231e66f5' stroke-width='1.5'/><circle cx='10' cy='15' r='1.2' fill='%231e66f5'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -43,7 +44,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
    SIDEBAR
 ══════════════════════════════════════════ */
 .sidebar{width:220px;min-width:220px;background:var(--sidebar);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;z-index:100;transition:transform .3s cubic-bezier(.4,0,.2,1),background .22s}
-.sb-top{padding:max(env(safe-area-inset-top,0px),14px) 11px 10px;align-items:center;gap:8px;margin-bottom:10px}
+.sb-top{padding:max(env(safe-area-inset-top,0px),14px) 11px 10px;align-items:center;gap:14px;margin-bottom:10px}
 .brand-icon{width:24px;height:24px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
 .brand-name{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.3px}
 .search-wrap{position:relative}
@@ -146,7 +147,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
 .todo-row{display:flex;align-items:flex-start;gap:9px;padding:4px 0}
 .todo-chk{width:16px;height:16px;min-width:16px;border:1.5px solid var(--border);border-radius:4px;margin-top:3px;display:flex;align-items:center;justify-content:center;background:none;transition:border-color .18s,background .18s;font-size:9px;font-weight:700;color:var(--bg);cursor:pointer}
 .todo-chk:hover{border-color:var(--accent)}
-.todo-chk.done{background:var(--green);border-color:var(--green)}
+.todo-chk.done{background:var(--accent);border-color:var(--accent)}
 .todo-ta{flex:1;background:none;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.55;color:var(--text);resize:none;padding:0;caret-color:var(--caret)}
 .todo-ta.done{text-decoration:line-through;color:var(--text3)}
 .todo-del{background:none;border:none;color:var(--text3);font-size:11px;padding:2px 3px;border-radius:3px;opacity:0;transition:opacity .12s,color .1s}
@@ -200,7 +201,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
 .wysiwyg .tl-li{display:flex;align-items:flex-start;gap:8px;padding:2px 0}
 .wysiwyg .task-cb{width:15px;height:15px;min-width:15px;border:1.5px solid var(--border);border-radius:4px;margin-top:4px;display:flex;align-items:center;justify-content:center;background:none;font-size:9px;font-weight:700;color:var(--bg);transition:background .18s,border-color .18s;flex-shrink:0}
 .wysiwyg .task-cb:hover{border-color:var(--accent)}
-.wysiwyg .task-cb.done{background:var(--green);border-color:var(--green)}
+.wysiwyg .task-cb.done{background:var(--accent);border-color:var(--accent)}
 /* markdown syntax hint — shown while typing the trigger chars */
 .md-hint{color:var(--text3);font-family:'JetBrains Mono',monospace;font-size:12.5px}
 
@@ -572,12 +573,16 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
   <div class="login-container">
     <div class="login-brand">
       <div class="login-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <ellipse cx="12" cy="12" rx="10" ry="7" />
-          <path d="M2 12 C5 9, 6 6, 5 4" />
-          <circle cx="7" cy="11" r="2.5" />
-          <path d="M14 8 L20 7" />
-          <path d="M14 16 L20 17" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="16" cy="16" rx="14" ry="9"/>
+          <path d="M2.5 14 C6 10, 7 6, 5.5 3"/>
+          <path d="M2.5 18 C6 22, 7 26, 5.5 29"/>
+          <circle cx="10" cy="15" r="3.5"/>
+          <rect x="17" y="11" width="8" height="3" rx="1"/>
+          <rect x="17" y="18" width="8" height="3" rx="1"/>
+          <circle cx="10" cy="15" r="1.2" fill="currentColor"/>
+          <line x1="28" y1="12.5" x2="30" y2="11"/>
+          <line x1="28" y1="19.5" x2="30" y2="21"/>
         </svg>
       </div>
       <h1 class="login-title">Solo</h1>
@@ -604,7 +609,17 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
 <div class="sidebar" id="sidebar">
   <div class="sb-top">
     <div class="brand">
-      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="brand-icon-svg"><ellipse cx="12" cy="12" rx="10" ry="7" /><path d="M2 12 C5 9, 6 6, 5 4" /><circle cx="7" cy="11" r="2.5" /><path d="M14 8 L20 7" /><path d="M14 16 L20 17" /></svg></div>
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="brand-icon-svg">
+  <ellipse cx="16" cy="16" rx="14" ry="9"/>
+  <path d="M2.5 14 C6 10, 7 6, 5.5 3"/>
+  <path d="M2.5 18 C6 22, 7 26, 5.5 29"/>
+  <circle cx="10" cy="15" r="3.5"/>
+  <rect x="17" y="11" width="8" height="3" rx="1"/>
+  <rect x="17" y="18" width="8" height="3" rx="1"/>
+  <circle cx="10" cy="15" r="1.2" fill="currentColor"/>
+  <line x1="28" y1="12.5" x2="30" y2="11"/>
+  <line x1="28" y1="19.5" x2="30" y2="21"/>
+</svg></div>
       <span class="brand-name">Solo</span>
     </div>
     <div class="search-wrap">
@@ -644,6 +659,7 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
     <button class="hamburger"   onclick="openSidebar()">☰</button>
     <div class="tb-right">
       <div class="save-dot" id="saveDot"></div>
+      <button class="tool-btn" onclick="syncNotes()" title="Sync notes" style="font-size:14px">⟳</button>
       <button class="tb-btn"        id="pinBtn" title="Pin"    onclick="togglePin()">◈</button>
       <button class="tb-btn"               title="Tag"    onclick="openTagModal()">⊕</button>
       <button class="tb-btn danger"        title="Delete" onclick="deleteNote()">⊗</button>
@@ -737,6 +753,23 @@ button{cursor:pointer;font-family:'DM Sans',sans-serif}
       <button class="btn-ok"     onclick="doAddTag()">Add</button>
     </div>
   </div>
+</div>
+
+<!-- Context Menus (placed before script so they exist when event listeners attach) -->
+<div class="context-menu" id="noteContextMenu">
+  <button class="context-menu-item" data-action="pin">Pin</button>
+  <button class="context-menu-item" data-action="delete">Delete</button>
+  <button class="context-menu-item" data-action="duplicate">Duplicate</button>
+</div>
+
+<div class="todo-context-menu" id="todoContextMenu">
+  <button class="todo-menu-item" data-action="toggle">Mark done</button>
+  <button class="todo-menu-item" data-action="delete">Delete</button>
+</div>
+
+<div class="context-menu" id="tagContextMenu">
+  <button class="context-menu-item" data-action="rename">Rename</button>
+  <button class="context-menu-item" data-action="delete">Delete from all notes</button>
 </div>
 
 <script>
@@ -839,6 +872,25 @@ async function deleteNoteFromFirestore(noteId) {
     console.error('Firestore delete error:', err);
   }
 }
+
+async function syncNotes(){
+  if(!currentUser || !db) { location.reload(); return; }
+  try {
+    const snapshot = await db.collection('users').doc(currentUser.uid).collection('notes').get();
+    const firestoreNotes = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+    if(firestoreNotes.length > 0) {
+      notes = firestoreNotes;
+      localStorage.setItem('solo-notes', JSON.stringify(notes));
+    }
+    renderAll();
+    // Show brief visual feedback
+    setSaveDot('saved');
+    setTimeout(()=>setSaveDot(''), 2000);
+  } catch(err) {
+    console.error('Sync error:', err);
+  }
+}
+
 function seed(){
   notes=[
     {id:'n1',title:'Welcome to Solo',
@@ -921,8 +973,11 @@ function md2html(raw){
       while(i<lines.length&&/^\d+\. /.test(lines[i])){items.push(`<li>${inl(lines[i].replace(/^\d+\. /,''))}</li>`);i++}
       out.push(`<ol>${items.join('')}</ol>`);continue;
     }
-    // empty → skip (paragraph break)
-    if(!l.trim()){i++;continue}
+    // empty line → insert blank paragraph for spacing
+    if(!l.trim()){
+      out.push('<p><br></p>');
+      i++;continue;
+    }
     // paragraph
     const para=[];
     while(i<lines.length&&lines[i].trim()&&!/^(#{1,3} |> |[-*] |\d+\. |---+$|\x00CB)/.test(lines[i])&&!/^- \[[ xX]\] /.test(lines[i])){
@@ -1036,7 +1091,13 @@ function getInnerText(el){
     if(tag==='a'){md+='[';node.childNodes.forEach(walk);md+=']('+( node.getAttribute('href')||'')+')';return}
     // Generic block (p, div)
     const isBlock=['p','div'].includes(tag);
-    if(isBlock&&md&&!md.endsWith('\n'))md+='\n';
+    if(isBlock){
+      if(md&&!md.endsWith('\n'))md+='\n';
+      // Check if this is an empty paragraph (just <br> or empty)
+      if(node.childNodes.length===0||(node.childNodes.length===1&&node.firstChild.tagName?.toLowerCase()==='br')){
+        md+='\n';return;
+      }
+    }
     node.childNodes.forEach(walk);
     if(isBlock&&!md.endsWith('\n'))md+='\n';
   }
@@ -1813,22 +1874,6 @@ if (document.readyState === 'loading') {
 }
 
 </script>
-
-<div class="context-menu" id="noteContextMenu">
-  <button class="context-menu-item" data-action="pin">Pin</button>
-  <button class="context-menu-item" data-action="delete">Delete</button>
-  <button class="context-menu-item" data-action="duplicate">Duplicate</button>
-</div>
-
-<div class="todo-context-menu" id="todoContextMenu">
-  <button class="todo-menu-item" data-action="toggle">Mark done</button>
-  <button class="todo-menu-item" data-action="delete">Delete</button>
-</div>
-
-<div class="context-menu" id="tagContextMenu">
-  <button class="context-menu-item" data-action="rename">Rename</button>
-  <button class="context-menu-item" data-action="delete">Delete from all notes</button>
-</div>
 
 </body>
 </html>
